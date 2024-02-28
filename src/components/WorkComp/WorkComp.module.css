@@ -1,0 +1,25 @@
+.card {
+    width: 300px;
+    height: 300px;
+    background: lightgrey;
+    border: 3px inset white;
+    /* background: linear-gradient(to right, #2c3e50, #fd746c); */
+    box-shadow: inset 20px 20px 60px #c5c5c5, inset -20px -20px 60px #ffffff;
+    transition: all .5s ease-in-out;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    cursor: pointer;
+    background-image:url('/work.png');
+    background-size: cover;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    transition: all .5s ease-in-out;
+  }
