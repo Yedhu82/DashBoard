@@ -188,8 +188,8 @@ console.log(response,'reswork');
              
              onChange={handleChange}
               >
-        {categories.map((cat)=>(
-        <MenuItem value={cat._id}>{cat.title}</MenuItem>
+        {categories.map((cat,index)=>(
+        <MenuItem key={index} value={cat._id}>{cat.title}</MenuItem>
         ))}
         
       </Select>
