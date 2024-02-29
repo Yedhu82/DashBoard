@@ -7,7 +7,7 @@ import Profile from "@/models/Profile";
 const userId = '65d127c81ba53393e31d956b'
 
 
-
+export const dynamic = 'force-dynamic';
 export const GET = async()=>{
     try {
         await connect()

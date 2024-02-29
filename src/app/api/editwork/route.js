@@ -12,7 +12,6 @@ cloudinary.config({
 });
 
 export const dynamic = 'force-dynamic';
-
 export const POST = async (request) => {
     try {
         await connect();

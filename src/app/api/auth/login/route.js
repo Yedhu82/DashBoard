@@ -7,7 +7,7 @@ import Profile from "@/models/Profile";
 import bcrypt from 'bcrypt'
 
 
-
+export const dynamic = 'force-dynamic';
 export const POST = async(request)=>{
     try{
         const {email , password } = await request.json();
