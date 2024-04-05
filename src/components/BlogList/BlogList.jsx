@@ -162,40 +162,53 @@ const BlogList = () => {
 
 
         {works.map((work)=>{
+          const title = work?.title;
+          const truncatedTitle = title && title.length > 15 ? title.substring(0, 15) + '...' : title;
+          
             const description = work?.description;
             const truncatedDescription = description && description.length > 15 ? description.substring(0, 15) + '...' : description;
+           
+            const subtitle = work?.subtitle;
+            const truncatedSubtitle = subtitle && subtitle.length > 15 ? subtitle.substring(0, 15) + '...' : subtitle;
+        
             
             
             return(
-          <Box key={work._id} sx={{p:'0rem  1rem',display:'flex',alignItems:'center',justifyContent:'space-between',gap:'0.5rem'}}>
-       
-          <Box sx={{borderRadius:'5px',width:'25%',background:'#fff',display:'grid',placeItems:'center',p:'0.5rem 0rem'}}>
-          <Typography fontSize='16px' fontWeight='bold'>{work?.title}</Typography>
-          </Box>
-          <Box sx={{borderRadius:'5px',width:'25%',background:'#fff',display:'grid',placeItems:'center',p:'0.5rem 0rem'}}>
-          <Typography fontSize='16px' fontWeight='bold'>{work?.subtitle}</Typography>
-          </Box>
-          <Box sx={{borderRadius:'5px',width:'25%',background:'#fff',display:'grid',placeItems:'center',p:'0.5rem 0rem'}}>
-          <Typography fontSize='16px' style={{
-    
-    maxHeight: "24px", // Adjust according to your font size and line height
-    lineHeight: "1.5em",
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-  }}  fontWeight='bold'>{truncatedDescription}</Typography>
-          </Box>
-          
-          <Box sx={{borderRadius:'5px',width:'25%',display:'grid',placeItems:'center',p:'0.5rem 0rem'}}>
-           <Image src={work?.image ? work?.image : User} width={50} height={50} alt='img' />
-           </Box>
-   
-           <Box sx={{borderRadius:'5px',width:'25%',background:'#fff',display:'flex',justifyContent:'center',gap:'1rem',p:'0.5rem 0rem'}}>
-            <Image onClick={()=>handleEditWork(work._id)} src={Edit} alt='edit' width={30} height={30} style={{cursor:'pointer'}} />
-            <Image onClick={()=>handleDelete(work._id)}    src={Delete} alt='edit' width={32} height={32} style={{cursor:'pointer'}} />
-          </Box> 
-         
-          </Box>
-        )})}
+              <Box key={work._id} sx={{p:'0rem  1rem',display:'flex',alignItems:'center',justifyContent:'space-between',gap:'0.5rem'}}>
+                  <Box sx={{borderRadius:'5px',width:'25%',background:'#fff',display:'grid',placeItems:'center',p:'0.5rem 0rem'}}>
+                      <Typography fontSize='16px' style={{
+                          maxHeight: "24px", // Adjust according to your font size and line height
+                          lineHeight: "1.5em",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                      }} fontWeight='bold'>{truncatedTitle}</Typography>
+                  </Box>
+                  <Box sx={{borderRadius:'5px',width:'25%',background:'#fff',display:'grid',placeItems:'center',p:'0.5rem 0rem'}}>
+                      <Typography fontSize='16px' style={{
+                          maxHeight: "24px", // Adjust according to your font size and line height
+                          lineHeight: "1.5em",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                      }} fontWeight='bold'>{truncatedSubtitle}</Typography>
+                  </Box>
+                  <Box sx={{borderRadius:'5px',width:'25%',background:'#fff',display:'grid',placeItems:'center',p:'0.5rem 0rem'}}>
+                      <Typography fontSize='16px' style={{
+                          maxHeight: "24px", // Adjust according to your font size and line height
+                          lineHeight: "1.5em",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                      }}  fontWeight='bold'>{truncatedDescription}</Typography>
+                  </Box>
+                  <Box sx={{borderRadius:'5px',width:'25%',display:'grid',placeItems:'center',p:'0.5rem 0rem'}}>
+                      <Image src={work?.image ? work?.image : User} width={50} height={50} alt='img' />
+                  </Box>
+                  <Box sx={{borderRadius:'5px',width:'25%',background:'#fff',display:'flex',justifyContent:'center',gap:'1rem',p:'0.5rem 0rem'}}>
+                      <Image onClick={()=>handleEditWork(work._id)} src={Edit} alt='edit' width={30} height={30} style={{cursor:'pointer'}} />
+                      <Image onClick={()=>handleDelete(work._id)} src={Delete} alt='edit' width={32} height={32} style={{cursor:'pointer'}} />
+                  </Box> 
+              </Box>
+          )
+        })}
          
 
 
