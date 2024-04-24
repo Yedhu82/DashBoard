@@ -22,8 +22,8 @@ try {
     const description =workData.get('description')
     const imageFile = workData.get('image')
 
-    const date = new Date("2021-05-26");
-const options = { month: 'long', day: '2-digit', year: 'numeric' };
+    const date = new Date();
+  const options = { month: 'long', day: '2-digit', year: 'numeric' };
 const formattedDate = date.toLocaleDateString('en-US', options);
 
     const fileBuffer = await imageFile.arrayBuffer()
